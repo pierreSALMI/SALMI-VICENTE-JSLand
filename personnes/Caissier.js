@@ -4,7 +4,6 @@ class Caissier extends Personnes {
     constructor(nv_nom, nv_prenom) {
         super(nv_nom, nv_prenom)
     }
-
     commande(list_client, budget, prix_total, nb_place){
         
         if (nb_place < list_client.size) {
@@ -13,6 +12,7 @@ class Caissier extends Personnes {
             return budget
         }
         else if (prix_total > budget) {
+        } else if ((list_client * this.attraction.prix()) > budget) {
             console.log("Caissier : Ah... Il semblerait que vous n'avez pas assez sur votre compte.")
             return budget
         } else {
