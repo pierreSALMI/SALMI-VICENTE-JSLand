@@ -15,6 +15,21 @@ class Client extends Personnes {
     getBudget() {
         return this.budget
     }
+
+    partAttraction(nomAttraction) {
+        console.log('Client : Bonjour je voudrais participer à cette fantastique attraction. Je vous présente les membres de ma famille.')
+        let participants = []
+        rl.question("Il y a :", function(famille) {
+            famille = famille.split(' ')
+            famille.forEach(element => {
+                participants.push(element)
+            })
+            rl.close()
+
+            console.log(participants)
+        })
+        participants.push(this.getPrenom)
+    }
 }
 
 module.exports = Client
