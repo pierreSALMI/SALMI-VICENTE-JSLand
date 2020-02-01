@@ -1,28 +1,30 @@
 const Personnes = require('./Personnes')
 
 class Caissier extends Personnes {
-    constructor(nv_nom, nv_prenom) {
+    constructor(nv_nom, nv_prenom, manager) {
         super(nv_nom, nv_prenom)
+        this.manager = manager
     }
-    commande(list_client, budget, prix_total, nb_place){
-        
-        if (nb_place < list_client.size) {
+
+    commande(attraction, client,list_client, budget, prix_total, nb_place){
+        if (list_client.length > nb_place) {
             console.log("Caissier : Il n'y a plus assez de places disponibles, veuillez attendre votre tour.")
-            this.attraction.nb_place(0);
-            return budget
-        }
-        else if (prix_total > budget) {
-        } else if ((list_client * this.attraction.prix()) > budget) {
+            attraction.nb_place = attraction.nb_place_restant;
+        } else if (budget < prix_total) {
             console.log("Caissier : Ah... Il semblerait que vous n'avez pas assez sur votre compte.")
-            return budget
+            console.log(`Vous regardez votre porte-monnaie et constatez qu'il n'y a que ${budget}€`)
         } else {
-            console.log("Caissier: Ah enchantÃ© de vous rencontrer: "+ 
+            var reponse = "Caissier: Ah enchanté de vous rencontrer: "
             list_client.forEach(nom => {
-                console.log(nom)
-            })+
-            ". Il y aure donc" + list_client.size + " tickets soit" + prix_total + " euros s'il vous plait."
-            )//fin console log
-            return budget - prix_total
+                reponse += nom + ", "
+            })
+            reponse = reponse.substring(0,reponse.length-2)
+            reponse += ". Il y aura donc " + list_client.length + " tickets soit " + prix_total + " euros s'il vous plait."
+
+            console.log(reponse)
+
+            attraction.nb_place -= list_client.length
+            client.payer(prix_total, attraction);
         }
     }
 }

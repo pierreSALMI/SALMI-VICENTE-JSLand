@@ -3,6 +3,16 @@ const Client = require('./personnes/Client')
 const Manager = require('./personnes/Manager')
 const Restaurateur = require('./personnes/Restaurateur')
 
-var timother = new Client("Bernar", "Jean-kristov", 800);
+const Attraction = require('./batiments/Attraction')
+const Restaurant = require('./batiments/Restaurant')
 
-timother.partAttraction("Pirates du pancréas");
+var timother = new Client("Bernar", "Jean-kristov", 600)
+var oui = new Manager("Manager", "Jean-michel")
+var jblb = new Caissier("Caissier", "Jeam-Michel", oui)
+var mesptitescouilles = new Attraction(3,300, "non",jblb)
+
+console.log(timother.budget)
+timother.partAttraction(mesptitescouilles)
+console.log(timother.budget)
+timother.plainte(oui, jblb)
+console.log(timother.budget)
