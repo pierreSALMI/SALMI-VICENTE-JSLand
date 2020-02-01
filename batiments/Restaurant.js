@@ -1,39 +1,18 @@
 class Restaurant{
-    constructor(nom, menu1, menu2, prix_menu1, prix_menu2){
+    constructor(nom, menu1, menu2, prix_menu1, prix_menu2, employee){
         this.nom = nom
         this.menu1 = menu1
         this.menu2 = menu2
         this.prix_menu1 = prix_menu1
         this.prix_menu2 = prix_menu2
+        this.employee = employee
     }
 
-    get nom() {
-      return this.nom
+    appelle_employee(client, budget){
+      this.employee.commande(this, client, budget)
     }
 
-    get menu1() {
-        return this.menu1
-      }
 
-    get menu2() {
-        return this.menu2
-      }
-
-    get prix_menu1() {
-        return this.prix_menu1
-      }
-
-    set prix_menu1(Nprix_menu1) {
-        this.prix_menu1 = Nprix_menu1
-      }
-
-    get prix_menu2() {
-        return this.prix_menu2
-      }
-
-    set prix_menu2(Nprix_menu2) {
-        this.prix_menu2 = Nprix_menu2
-      }
 }
 
 module.exports = Restaurant

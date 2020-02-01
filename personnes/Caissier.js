@@ -12,9 +12,9 @@ class Caissier extends Personnes {
             attraction.nb_place = attraction.nb_place_restant;
         } else if (budget < prix_total) {
             console.log("Caissier : Ah... Il semblerait que vous n'avez pas assez sur votre compte.")
-            console.log(`Vous regardez votre porte-monnaie et constatez qu'il n'y a que ${budget}€`)
+            console.log(`Vous regardez votre porte-monnaie et constatez qu'il n'y a que ${budget}ï¿½`)
         } else {
-            var reponse = "Caissier: Ah enchanté de vous rencontrer: "
+            var reponse = "Caissier: Ah enchantï¿½ de vous rencontrer: "
             list_client.forEach(nom => {
                 reponse += nom + ", "
             })
