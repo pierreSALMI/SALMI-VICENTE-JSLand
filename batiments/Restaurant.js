@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")();
+
 class Restaurant{
     constructor(nom, menu1, menu2, prix_menu1, prix_menu2, employee){
         this.nom = nom
@@ -8,8 +10,9 @@ class Restaurant{
         this.employee = employee
     }
 
-    appelle_employee(client, budget){
-      this.employee.commande(this, client, budget)
+    appelle_employee(client){
+      const nb_client = prompt("Restaurant : Ah bonjour ! Combien êtes vous ?")
+      this.employee.commande(this, client, parsInt(nb_client, 10))
     }
 
 

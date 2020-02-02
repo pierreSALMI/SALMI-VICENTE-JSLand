@@ -15,7 +15,7 @@ class Client extends Personnes {
     }
 
     partAttraction(attraction) {
-        console.log('Client : Bonjour je voudrais participer à cette fantastique attraction. Je vous présente les membres de ma famille.')
+        console.log('Client : Bonjour je voudrais participer ï¿½ cette fantastique attraction. Je vous prï¿½sente les membres de ma famille.')
         var participants = prompt("Il y a :")
 
         const filter = [null,"", " "]
@@ -33,7 +33,7 @@ class Client extends Personnes {
         this.budget -= a_payer
         this.dernier_paie = a_payer
         this.dernier_endroi = batiment
-        console.log(`J'ai payé ${a_payer} à ${batiment.nom}`)
+        console.log(`J'ai payï¿½ ${a_payer} ï¿½ ${batiment.nom}`)
     }
 
     plainte(manager, employee){
@@ -43,6 +43,11 @@ class Client extends Personnes {
 
     recup_argent(value){
         this.budget += value
+    }
+    
+    manger(restaurant){
+        console.log(`Client. : Bonjour, je mangerai bien dans ce restaurant, le ${restaurant.nom}` )
+        restaurant.appelle_employee(this)
     }
 }
 
