@@ -1,0 +1,11 @@
+{
+  "name" : "SALMI-VICENTE-JSLand",
+  "description" : "Projet de Javascript JSLand",
+  "homepage" : "https://github.com/pierreSALMI/SALMI-VICENTE-JSLand",
+  "author" : "Pierre Salmi <pierre.salmi@ynov.com>, Théo Vicente <theo.vicente@ynov.com>",
+  "contributors" : [],
+  "dependencies" : [],
+  "repository" : {"type": "git", "url": "git://github.com/pierreSALMI/SALMI-VICENTE-JSLand.git"},
+  "main" : "main.js",
+  "version" : "1.0"
+}
