@@ -12,7 +12,7 @@ class Restaurant{
 
     appelle_employee(client){
       const nb_client = prompt("Restaurant : Ah bonjour ! Combien êtes vous ?")
-      this.employee.commande(this, client, parsInt(nb_client, 10))
+      this.employee.commande(this, client, parseInt(nb_client, 10))
     }
 
 

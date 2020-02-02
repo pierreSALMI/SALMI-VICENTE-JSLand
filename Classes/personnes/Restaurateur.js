@@ -1,6 +1,5 @@
 const prompt = require("prompt-sync")();
 
-
 const Personnes = require('./Personnes')
 
 class Restaurateur extends Personnes {
